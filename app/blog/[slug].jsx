@@ -1,15 +1,16 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import Navbar from '../components/Navbar';
+import { useLocalSearchParams } from 'expo-router';
+import Navbar from '../../components/Navbar';
 
-export default function About() {
+export default function BlogPost() {
+  const { slug } = useLocalSearchParams();
+
   return (
     <View style={styles.container}>
       <Navbar />
-      <Text style={styles.title}>À propos de notre application</Text>
-      <Text style={styles.content}>
-        Cette application a été créée pour démontrer l'utilisation d'Expo Router et React Native.
-      </Text>
+      <Text style={styles.title}>Article: {slug}</Text>
+      <Text style={styles.content}>Contenu de l'article ici...</Text>
     </View>
   );
 }

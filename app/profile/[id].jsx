@@ -1,17 +1,16 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { useLocalSearchParams, Link } from 'expo-router';
+import { useLocalSearchParams } from 'expo-router';
+import Navbar from '../../components/Navbar';
 
-export default function ProfilePage() {
+export default function Profile() {
   const { id } = useLocalSearchParams();
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Profil</Text>
-      <Text style={styles.text}>ID du profil : {id}</Text>
-      <Link href="/" style={styles.link}>
-        <Text style={styles.linkText}>Retour à l'accueil</Text>
-      </Link>
+      <Navbar />
+      <Text style={styles.title}>Profil de l'utilisateur</Text>
+      <Text style={styles.content}>ID de l'utilisateur : {id}</Text>
     </View>
   );
 }
@@ -19,27 +18,15 @@ export default function ProfilePage() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
+    backgroundColor: '#f5f5f5',
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 20,
+    margin: 20,
   },
-  text: {
-    fontSize: 18,
-    marginBottom: 20,
-  },
-  link: {
-    marginTop: 20,
-    padding: 10,
-    backgroundColor: '#007AFF',
-    borderRadius: 5,
-  },
-  linkText: {
-    color: 'white',
-    textAlign: 'center',
+  content: {
+    fontSize: 16,
+    margin: 20,
   },
 });
