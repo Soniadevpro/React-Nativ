@@ -5,6 +5,7 @@ export default function Layout() {
     <Stack>
       <Stack.Screen name="index" options={{ title: 'Accueil' }} />
       <Stack.Screen name="about" options={{ title: 'À propos' }} />
+      <Stack.Screen name="profile/[id]" options={{ title: 'Profil' }} />
     </Stack>
   );
 }

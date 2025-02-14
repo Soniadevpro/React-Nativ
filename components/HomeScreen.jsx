@@ -48,6 +48,12 @@ import { Link } from 'expo-router';
     // Rendu du composant
     return (
         <ScrollView contentContainerStyle={styles.scrollContainer}>
+          <Link href="/profile/1">
+  <Text>Voir le profil 1</Text>
+</Link>
+<Link href="/profile/2">
+  <Text>Voir le profil 2</Text>
+</Link>
           <Text style={styles.title}>Liste des Noms</Text>
           <FlatList
             data={names}
